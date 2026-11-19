@@ -21,7 +21,10 @@
     .name { font-size:14px; font-weight:650; text-decoration:none; }
     nav { display:flex; flex-wrap:wrap; gap:24px; font-size:13px; }
     nav a { text-decoration:none; }
-    .intro { padding:78px 0 65px; max-width:800px; }
+    .intro { padding:78px 0 65px; display:grid; grid-template-columns:minmax(0,1fr) 240px; gap:48px; align-items:center; }
+    .portrait { display:block; width:240px; height:240px; max-width:100%; object-fit:cover; border-radius:8px; grid-column:2; grid-row:1; }
+    .intro-copy { grid-column:1; grid-row:1; min-width:0; }
+    @media(max-width:760px) { .intro { grid-template-columns:1fr; gap:28px; } .portrait { grid-column:1; grid-row:1; width:160px; height:160px; } .intro-copy { grid-column:1; grid-row:2; } }
     .eyebrow,.label { font:11px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); }
     .eyebrow { color:var(--green); }
     h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; font-weight:400; }
@@ -64,14 +67,17 @@
   <div class="wrap">
     <header>
       <a class="name" href="#top">Sambhav Pyakurel</a>
-      <nav aria-label="Main navigation"><a href="#software">Software</a><a href="#reporting">Reporting</a><a href="#writing">Writing</a><a href="#about">About</a></nav>
+      <nav aria-label="Main navigation"><a href="#software">Software</a><a href="#reporting">Reporting</a><a href="#writing">Writing</a><a href="#about">About</a><a href="resume.pdf" target="_blank" rel="noopener" aria-label="Résumé (PDF, opens in a new tab)">Résumé (PDF)</a></nav>
     </header>
     <main id="main">
       <div class="intro">
+        <img class="portrait" src="portrait.jpg" alt="Sambhav Pyakurel" width="400" height="400" fetchpriority="high">
+        <div class="intro-copy">
         <span class="eyebrow">Software · Journalism · Writing</span>
         <h1>I write code.<br>I tell stories.</h1>
         <p>I’m Sambhav, a programmer and writer interested in how things work—and how to make them easier to understand. I build browser experiences and data tools, report for SM2, and write essays and fiction.</p>
         <p class="intro-links"><a href="#software">Explore my work <span aria-hidden="true">↓</span></a><a href="https://github.com/sambhavpyakurel">GitHub <span aria-hidden="true">↗</span></a></p>
+        </div>
       </div>
       <section class="work" id="software" aria-labelledby="software-title">
         <div class="section-head"><h2 id="software-title"><span class="number">01</span>Selected software</h2><a href="https://github.com/sambhavpyakurel?tab=repositories">All repositories ↗</a></div>

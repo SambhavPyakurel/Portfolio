@@ -4,7 +4,7 @@ A minimal, responsive portfolio in one self-contained `index.html`. No packages,
 
 ## Publish on GitHub Pages
 
-1. Upload `index.html` and `.nojekyll` to the root of your repository.
+1. Upload `index.html`, `resume.pdf`, `portrait.jpg`, and `.nojekyll` to the root of your repository.
 2. In repository **Settings → Pages**, choose **Deploy from a branch**, then your branch and **/(root)**.
 3. For a personal site at `sambhavpyakurel.github.io`, use a repository named `sambhavpyakurel.github.io`. A differently named repository also works, at a project URL.
 4. Add your actual custom domain in Pages settings, then follow GitHub's DNS instructions for your domain type. Enable HTTPS once available. No CNAME file is included because your domain was not supplied.
@@ -14,7 +14,9 @@ Official documentation: https://docs.github.com/en/pages/getting-started-with-gi
 ## Personalize before applying
 
 - Review the drafted introduction and About copy for your preferred voice.
-- Add a professional email link and a résumé PDF when ready. None was provided or found in the public GitHub profile, so neither is invented here.
+- The navigation links to `resume.pdf` in a new tab. Replace that file with a new PDF using the same name to update the résumé. Browser preferences may cause PDFs to download instead of opening inline.
+- The introduction uses `portrait.jpg`, displayed beside the text on desktop and above it on narrow screens. Replace that file to update the photo.
+- Add a professional email link when ready.
 - Add a concise collaboration example and your AI-assisted development practices if you can substantiate them. The reviewed projects do not establish those job qualifications.
 - Project links currently lead to repositories and actual screenshots/data, not unverified live demos.
 

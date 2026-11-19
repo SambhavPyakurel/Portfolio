@@ -21,10 +21,10 @@
     .name { font-size:14px; font-weight:650; text-decoration:none; }
     nav { display:flex; flex-wrap:wrap; gap:24px; font-size:13px; }
     nav a { text-decoration:none; }
-    .intro { padding:78px 0 65px; display:grid; grid-template-columns:minmax(0,1fr) 240px; gap:48px; align-items:center; }
-    .portrait { display:block; width:240px; height:240px; max-width:100%; object-fit:cover; border-radius:8px; grid-column:2; grid-row:1; }
+    .intro { padding:78px 0 65px; max-width:800px; }
+    .portrait { display:block; width:240px; height:240px; max-width:100%; object-fit:cover; border-radius:8px; margin-top:24px; }
     .intro-copy { grid-column:1; grid-row:1; min-width:0; }
-    @media(max-width:760px) { .intro { grid-template-columns:1fr; gap:28px; } .portrait { grid-column:1; grid-row:1; width:160px; height:160px; } .intro-copy { grid-column:1; grid-row:2; } }
+    @media(max-width:640px) { .portrait { width:180px; height:180px; margin:0 0 26px; } .section-head { flex-wrap:wrap; } }
     .eyebrow,.label { font:11px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); }
     .eyebrow { color:var(--green); }
     h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; font-weight:400; }
@@ -67,27 +67,26 @@
   <div class="wrap">
     <header>
       <a class="name" href="#top">Sambhav Pyakurel</a>
-      <nav aria-label="Main navigation"><a href="#software">Software</a><a href="#reporting">Reporting</a><a href="#writing">Writing</a><a href="#about">About</a><a href="resume.pdf" target="_blank" rel="noopener" aria-label="Résumé (PDF, opens in a new tab)">Résumé (PDF)</a></nav>
+      <nav aria-label="Main navigation"><a href="#software">Software</a><a href="#reporting">Reporting</a><a href="#writing">Writing</a><a href="#about">About</a><a href="resume.pdf" target="_blank" rel="noopener" aria-label="Résumé (PDF, opens in a new tab)">Résumé</a></nav>
     </header>
     <main id="main">
       <div class="intro">
-        <img class="portrait" src="portrait.jpg" alt="Sambhav Pyakurel" width="400" height="400" fetchpriority="high">
         <div class="intro-copy">
         <span class="eyebrow">Software · Journalism · Writing</span>
         <h1>I write code.<br>I tell stories.</h1>
-        <p>I’m Sambhav, a programmer and writer interested in how things work—and how to make them easier to understand. I build browser experiences and data tools, report for SM2, and write essays and fiction.</p>
+        <p>I’m Sambhav. I dabble in coding and writing, and I’m interested in telling stories. I’m a computer science student at USM who builds for the web, creates data tools, and reports and writes features for the campus paper.</p>
         <p class="intro-links"><a href="#software">Explore my work <span aria-hidden="true">↓</span></a><a href="https://github.com/sambhavpyakurel">GitHub <span aria-hidden="true">↗</span></a></p>
         </div>
       </div>
       <section class="work" id="software" aria-labelledby="software-title">
-        <div class="section-head"><h2 id="software-title"><span class="number">01</span>Selected software</h2><a href="https://github.com/sambhavpyakurel?tab=repositories">All repositories ↗</a></div>
+        <div class="section-head"><h2 id="software-title"><span class="number">01</span>Some of my coding projects</h2><a href="https://github.com/sambhavpyakurel?tab=repositories">All repositories ↗</a></div>
         <div class="projects">
           <article class="project">
             <span class="label">JavaScript / HTML / CSS</span>
-            <h3><a href="https://github.com/SambhavPyakurel/Crosswords">The Weekly Crossword ↗</a></h3>
+            <h3><a href="https://sambhavpyakurel.github.io/Crosswords/">The Weekly Crossword</a></h3>
             <p>A browser crossword with a companion puzzle studio. The player handles keyboard navigation and answer checking; the editor generates clue numbering and exports puzzles as JSON.</p>
             <p>A small publishing workflow connecting an author’s tools to a reader’s experience.</p>
-            <div class="links"><a href="https://github.com/SambhavPyakurel/Crosswords">Explore project</a><a href="https://github.com/SambhavPyakurel/Crosswords/blob/main/docs/images/builder.png">See the editor</a></div>
+            <div class="links"><a href="https://sambhavpyakurel.github.io/Crosswords/">Play the crossword</a><a href="https://github.com/SambhavPyakurel/Crosswords">View source code</a></div>
           </article>
           <article class="project">
             <span class="label">Python / pandas / Data visualization</span>
@@ -98,9 +97,9 @@
           </article>
           <article class="project">
             <span class="label">JavaScript / Browser storage</span>
-            <h3><a href="https://github.com/SambhavPyakurel/Wordle">Daily Five ↗</a></h3>
+            <h3><a href="https://sambhavpyakurel.github.io/Daily-Five/">Daily Five</a></h3>
             <p>An independent Wordle-style game with daily and free-play modes, repeated-letter scoring, local statistics, adjustable letter sizes and shareable results.</p>
-            <div class="links"><a href="https://github.com/SambhavPyakurel/Wordle">Explore project</a><a href="https://github.com/SambhavPyakurel/Wordle/blob/main/game.png">See gameplay</a></div>
+            <div class="links"><a href="https://sambhavpyakurel.github.io/Daily-Five/">Play Daily Five</a><a href="https://github.com/SambhavPyakurel/Daily-Five">View source code</a></div>
           </article>
           <article class="project">
             <span class="label">Python / YouTube Data API / CSV</span>
@@ -111,7 +110,7 @@
         </div>
       </section>
       <section class="work" id="reporting" aria-labelledby="reporting-title">
-        <div class="section-head"><h2 id="reporting-title"><span class="number">02</span>Selected reporting</h2><a href="https://sm2media.com/staff_name/sambhav-pyakurel/">All SM2 stories ↗</a></div>
+        <div class="section-head"><h2 id="reporting-title"><span class="number">02</span>Some of my reporting work</h2><a href="https://sm2media.com/staff_name/sambhav-pyakurel/">All SM2 stories ↗</a></div>
         <article class="story"><div class="label">SM2 / Campus news<time datetime="2026-10-28">October 28, 2026</time></div><div><h3><a href="https://sm2media.com/39331/news/on-campus/student-printz-archives-trace-decades-of-usm-parking-concerns/">Student Printz Archives Trace Decades of USM Parking Woes ↗</a></h3><p>A decade-by-decade look through student newspaper archives, tracing recurring parking complaints, proposed solutions and university responses.</p></div></article>
         <article class="story"><div class="label">SM2 / Features<time datetime="2026-11-04">November 4, 2026</time></div><div><h3><a href="https://sm2media.com/39503/features/beneath-usm-the-steam-tunnels-and-workers-who-kept-campus-warm/">Beneath USM: The steam tunnels and workers who kept campus warm ↗</a></h3><p>A feature on the infrastructure beneath campus and the people behind its heating system.</p></div></article>
         <article class="story"><div class="label">SM2 / Campus news<time datetime="2026-10-21">October 21, 2026</time></div><div><h3><a href="https://sm2media.com/39168/news/on-campus/the-day-the-student-printz-couldnt-print/">The Day the Student Printz Couldn’t Print ↗</a></h3><p>A look back at a chapter in the student newspaper’s history, with original and revised editions from March 1964.</p></div></article>
@@ -119,13 +118,21 @@
       <section class="work" id="writing" aria-labelledby="writing-title">
         <div class="section-head"><h2 id="writing-title"><span class="number">03</span>Essays &amp; fiction</h2><a href="https://sambhavpyakurel.wordpress.com">Visit my blog ↗</a></div>
         <div class="essays">
-          <article><span class="label">Essay / February 2025</span><h3><a href="https://sambhavpyakurel.wordpress.com/2025/02/10/ai-in-writing/">AI in Writing ↗</a></h3><p>A personal reflection on the rise of AI and its place in writing, from someone who also codes.</p></article>
+          <article><span class="label">Essay / March 2026</span><h3><a href="https://sambhavpyakurel.wordpress.com/2026/03/10/what-weve-lost-in-the-age-of-dark-humor/">What We’ve Lost in the Age of Dark Humor</a></h3><p>A personal reflection on humor as a refuge and the questions that come with turning struggles into punchlines.</p></article>
           <article><span class="label">Fiction / August 2025</span><h3><a href="https://sambhavpyakurel.wordpress.com/2025/08/27/never-land/">Never-land ↗</a></h3><p>A story about Sam, nearing twenty and searching for something he cannot yet name.</p></article>
         </div>
       </section>
       <section class="about" id="about" aria-labelledby="about-title">
-        <h2 id="about-title"><span class="number">04</span>About me</h2>
-        <div><p>My work spans software, reporting and creative writing. In code, I’m interested in useful tools and thoughtful interactions. In reporting, I follow the people and systems behind everyday life—from campus infrastructure to the history preserved in newspaper archives.</p><p>I’m interested in newsroom engineering: building tools that help journalists report and experiences that help readers understand.</p><p class="skills">JavaScript · HTML &amp; CSS · Python · pandas · Git &amp; GitHub</p></div>
+        <div>
+          <h2 id="about-title"><span class="number">04</span>About me</h2>
+          <img class="portrait" src="portrait.jpg" alt="Sambhav Pyakurel" width="400" height="400" loading="lazy">
+        </div>
+        <div>
+          <p>I’m currently in college, and it might sound clichéd, but I’m trying to figure myself out. So I do anything and everything that interests me.</p>
+          <p>I usually watch movies when nothing interesting is going on. Right now, I’m trying to catch up on the Marvel Cinematic Universe before <em>Doomsday</em>. Like everybody else, I like listening to music; Fleetwood Mac has been a recent favorite. An absolute favorite is <a href="https://www.youtube.com/watch?v=9b4F_ppjnKU">Seven Wonders</a>.</p>
+          <p>What else? Yeah, I’m big into sports, too, and I’ve been watching a lot of college ball lately.</p>
+          <p>If you want to know more about my work and academics, you can <a href="resume.pdf" target="_blank" rel="noopener" aria-label="Read my résumé (PDF, opens in a new tab)">read my résumé</a>.</p>
+        </div>
       </section>
     </main>
     <footer><span>Sambhav Pyakurel · Code &amp; stories</span><div><a href="https://github.com/sambhavpyakurel">GitHub</a><a href="https://sm2media.com/staff_name/sambhav-pyakurel/">SM2</a><a href="https://sambhavpyakurel.wordpress.com">Blog</a><a href="#top">Back to top ↑</a></div></footer>

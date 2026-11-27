@@ -19,8 +19,11 @@ toggle.addEventListener("click", () => {
 });
 const motion = matchMedia("(prefers-reduced-motion: reduce)");
 const emerging = new Set();
+const revealProgress = new WeakMap();
 let frame = 0;
+let lastFrameTime = 0;
 function finishReveal(el) {
+  revealProgress.set(el, 1);
   el.classList.remove("is-emerging");
   el.style.removeProperty("--reveal-opacity");
   el.style.removeProperty("--reveal-offset");
@@ -33,13 +36,19 @@ function layoutTop(el) {
   for (let node = el; node; node = node.offsetParent) top += node.offsetTop;
   return top - window.scrollY;
 }
-function updateReveals() {
+function updateReveals(now = performance.now()) {
   frame = 0;
+  const elapsed = lastFrameTime ? Math.min(now - lastFrameTime, 48) : 16;
+  lastFrameTime = now;
   if (motion.matches) {
     emerging.forEach(finishReveal);
     return;
   }
   const height = window.innerHeight;
+  // Follow the scroll target over time, so a quick scroll still has a visible
+  // settling animation (roughly 1.5 seconds for a full reveal).
+  const blend = 1 - Math.exp(-elapsed / 280);
+  let settling = false;
   // Measure layout rather than the transformed box, so the animation cannot
   // feed back into its own scroll position as cards tilt and scale.
   const positions = [...emerging].map((el) => ({
@@ -52,11 +61,20 @@ function updateReveals() {
       siblings && window.innerWidth > 680
         ? Array.from(el.parentElement.children).indexOf(el) * 0.035
         : 0;
-    const progress = Math.max(
+    const target = Math.max(
       0,
       Math.min(1, (height * (0.96 - stagger) - top) / (height * 0.3)),
     );
-    if (progress === 1 || el.contains(document.activeElement)) {
+    if (el.contains(document.activeElement)) {
+      finishReveal(el);
+      continue;
+    }
+    const previous = revealProgress.get(el) ?? target;
+    let progress = previous + (target - previous) * blend;
+    if (Math.abs(target - progress) < 0.004) progress = target;
+    else settling = true;
+    revealProgress.set(el, progress);
+    if (progress === 1) {
       finishReveal(el);
       continue;
     }
@@ -68,6 +86,7 @@ function updateReveals() {
     el.style.setProperty("--reveal-tilt", `${(1 - eased) * 7}deg`);
     el.style.setProperty("--reveal-progress", String(progress));
   }
+  if (settling) scheduleReveal();
 }
 function scheduleReveal() {
   if (!frame && emerging.size) frame = requestAnimationFrame(updateReveals);

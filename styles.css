@@ -437,6 +437,12 @@ footer {
 footer a {
   text-decoration: none;
 }
+.section-head > a,
+.links a,
+.history summary,
+footer a {
+  font-family: Georgia, "Times New Roman", serif;
+}
 .reveal.is-emerging {
   opacity: var(--reveal-opacity, 1);
   transform: perspective(1000px) translate3d(0, var(--reveal-offset, 0px), 0)
